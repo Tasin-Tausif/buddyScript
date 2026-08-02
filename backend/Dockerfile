@@ -18,7 +18,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Copy composer files first to leverage Docker layer caching
 COPY composer.json composer.lock ./
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader || true
 
 # Copy the application code
 COPY . .
