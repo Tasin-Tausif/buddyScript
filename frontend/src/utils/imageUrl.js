@@ -9,7 +9,7 @@ export const getImageUrl = (path) => {
         return path;
     }
 
-    const backend = import.meta.env.VITE_API_URL;
+    const backend = import.meta.env.VITE_API_BASE_URL;
 
     return `${backend}/storage/${path}`;
 };
